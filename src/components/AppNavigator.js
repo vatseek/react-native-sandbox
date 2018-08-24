@@ -6,7 +6,7 @@ import {
     createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
 
-import MainPage from './MainPage';
+import MainPage from '../containers/MainPageContainer';
 import SettingsPage from './SettingsPage';
 
 const middleware = createReactNavigationReduxMiddleware(
@@ -32,6 +32,7 @@ const RootNavigator = createStackNavigator({
 const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
 
 const mapStateToProps = state => ({state: state.nav});
+
 const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
 
 export { RootNavigator, AppNavigator, middleware };

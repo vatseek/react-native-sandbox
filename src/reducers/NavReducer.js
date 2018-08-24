@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { RootNavigator } from '../components/AppNavigator';
 
 
@@ -11,7 +10,6 @@ const NavReducer = (state = initialNavState, action) => {
             return RootNavigator.router.getStateForAction(action, state);
             break;
     }
-
 };
 
 export default NavReducer;
